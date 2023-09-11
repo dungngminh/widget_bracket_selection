@@ -158,7 +158,7 @@ function selectText(includeBrack: boolean, selection: vscode.Selection): { start
 
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
-		vscode.commands.registerCommand("copy-widget.highlight", function () {
+		vscode.commands.registerCommand("widget_bracket_selection.highlight", function () {
 			expandSelection(true);
 		})
 	);

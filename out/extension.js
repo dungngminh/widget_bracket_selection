@@ -143,7 +143,7 @@ function selectText(includeBrack, selection) {
     };
 }
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand("copy-widget.highlight", function () {
+    context.subscriptions.push(vscode.commands.registerCommand("widget_bracket_selection.highlight", function () {
         expandSelection(true);
     }));
 }

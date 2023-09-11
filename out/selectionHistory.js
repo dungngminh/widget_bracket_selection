@@ -3,9 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.unDoSelect = exports.changeSelections = void 0;
 const vscode = require("vscode");
 let selectionHistory = [];
-vscode.window.onDidChangeActiveTextEditor(() => { selectionHistory = []; });
+vscode.window.onDidChangeActiveTextEditor(() => {
+    selectionHistory = [];
+});
 function selectionLength(editor, selection) {
-    return editor.document.offsetAt(selection.end) - editor.document.offsetAt(selection.start);
+    return (editor.document.offsetAt(selection.end) -
+        editor.document.offsetAt(selection.start));
 }
 function changeSelections(selections) {
     let editor = vscode.window.activeTextEditor;
@@ -19,7 +22,7 @@ function changeSelections(selections) {
         }
     }
     let originSelections = editor.selections;
-    selectionHistory.push(originSelections);
+    selectionHistory.push(originSelections.map((e) => e));
     editor.selections = selections;
 }
 exports.changeSelections = changeSelections;
