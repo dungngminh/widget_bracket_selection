@@ -27,7 +27,9 @@ function findBackward(text, index) {
                         insideAngleBracket = false;
                         continue;
                     }
-                    if (!insideAngleBracket && !bracketUtil_1.bracketUtil.isLetter(text.charAt(j))) {
+                    const charAtJ = text.charAt(j);
+                    if (!insideAngleBracket
+                        && !(bracketUtil_1.bracketUtil.isLetter(charAtJ) || bracketUtil_1.bracketUtil.isUnderDashInDart(charAtJ))) {
                         return new SearchResult(char, j + 1);
                     }
                 }
@@ -118,7 +120,7 @@ function selectText(includeBrack, selection) {
         backwardResult = findBackward(searchContext.text, backwardResult.offset - 1);
     }
     if (!isMatch(backwardResult, forwardResult)) {
-        showInfo('No matched bracket pairs found');
+        showInfo('No matched bracket pairs found!');
         return;
     }
     // we are next to a bracket

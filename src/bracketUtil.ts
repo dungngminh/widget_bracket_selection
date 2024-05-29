@@ -1,4 +1,5 @@
 "use strict";
+import * as vscode from 'vscode';
 
 export namespace bracketUtil {
   let bracketParis = [
@@ -20,5 +21,10 @@ export namespace bracketUtil {
 
   export function isLetter(char: String) {
     return char.length === 1 && char.match(/[a-z.]/i);
+  }
+
+  // check if private in dart
+  export function isUnderDashInDart(char: string) {
+    return char.length === 1 && char === '_' && vscode.window.activeTextEditor?.document.languageId === 'dart';
   }
 }
