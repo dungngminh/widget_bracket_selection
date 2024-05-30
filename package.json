@@ -8,12 +8,27 @@
   },
   "publisher": "dungngminh",
   "icon": "assets/logo.jpg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.60.0"
   },
+  "keywords": [
+    "widget",
+    "flutter",
+    "dart",
+    "selection",
+    "highlight",
+    "bracket",
+    "copy",
+    "paste",
+    "select widget",
+    "alt w",
+    "cmd w",
+    "widget bracket selection"
+  ],
   "categories": [
-    "Other"
+    "Other",
+    "Extension Packs"
   ],
   "activationEvents": [
     "onCommand:widget_bracket_selection.highlight"
